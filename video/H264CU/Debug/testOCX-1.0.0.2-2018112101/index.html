@@ -1,0 +1,667 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+        <!-- 防止中文乱码 -->
+        <meta charset="UTF-8">
+        </meta>
+        <!-- 样式 -->
+
+        <style>
+                body,
+                html {
+                        margin: 0px;
+                        height: 100%;
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                }
+
+                .top {
+                        width: 100%;
+                        height: 50px;
+                }
+
+                .content {
+                        width: 100%;
+                        height: 100%;
+
+                }
+
+                .left {
+                        width: 30%;
+                        height: 100%;
+                        float: left;
+                        border: 1px solid #000;
+                        position: fixed;
+						margin-left: 5px;
+                }
+
+                .right {
+                        width: 69%;
+                        height: 30000px;
+                        float: right;
+                }
+
+                pre {
+                        word-wrap: break-all;
+                        width: 100%;
+                }
+
+                .title {
+                        clear: both;
+                        font-size: 24px;
+                        display: block;
+                        font-weight: bolder;
+
+                }
+
+                .myTable {
+                        margin-left: 40px;
+                }
+
+                a {
+                        font-size: 16px
+                }
+
+                a:link {
+                        color: #000;
+                        text-decoration: none;
+                }
+
+
+                a:active: {
+                        color: red;
+                }
+
+
+                a:visited {
+                        color: purple;
+                        text-decoration: none;
+                }
+
+
+                a:hover {
+                        color: red;
+                        text-decoration: underline;
+                }
+
+                .funcStyle {
+                        border: 1px solid #000;
+                        width: 310;
+                        padding: 10px;
+                        margin-left: 5%;
+                        float:left;
+                }
+                b:last-of-type{
+                        width:200px;
+                }
+                b
+                {
+                        margin-top: 2px;
+                        display: block;
+                        float: left;
+                        width: 100px;
+                        height: 30px;
+                }
+
+                input{
+                        margin-top: 2px;
+                        float:left;
+                        width:200px;
+                        height: 30px;
+                }
+                button{
+                        clear: left;
+                        height: 30px;
+                }
+
+                .funcStyle div{
+                        float:left;
+                        width:200px;
+                }
+                
+        
+
+        </style>
+
+        <link href="common/style.css" rel="stylesheet" type="text/css">
+        </link>
+
+        <script language="JavaScript" src="H264Cu.js">
+        </script>
+
+        <title></title>
+</head>
+
+<body>
+        <div class="content">
+                <div class="left">
+                        <ol>
+                                <li>
+                                        <a href="#0-welcome">OCX控件SDK使用说明</a>
+                                </li>
+
+                                <li>
+                                        <a href="#1-login">登陆设备</a>
+                                </li>
+
+                                <li>
+                                        <a href="#2-logout">注销设备</a>
+                                </li>
+
+                                <li>
+                                        <a href="#3-OpenVideo">打开视频</a>
+                                </li>
+
+                                <li>
+                                        <a href="#4-CloseVideo">关闭视频</a>
+                                </li>
+
+                                <li>
+                                        <a href="#5-SetCaptureMass">设置图片质量</a>
+                                </li>
+
+                                <li>
+                                        <a href="#6-GetCaptureMass">查询图片质量</a>
+                                </li>
+
+                                <li>
+                                        <a href="#7-SetOSDTimeInfo">设置OSD时间</a>
+                                </li>
+
+                                <li>
+                                        <a href="#8-GetOSDTimeInfo">查询OSD时间</a>
+                                </li>
+
+                                <li>
+                                        <a href="#9-ColorDlg">颜色对话框</a>
+                                </li>
+
+                                <li>
+                                        <a href="#10-SetOSDLogoInfo">设置OSD Logo</a>
+                                </li>
+
+                                <li>
+                                        <a href="#11-GetOSDLogoInfo">查询OSD Logo</a>
+                                </li>
+
+                                <li>
+                                        <a href="#12-SetOSDUserDefInfo">设置OSD字符叠加</a>
+                                </li>
+
+                                <li>
+                                        <a href="#13-GetOSDUserDefInfo">查询OSD字符叠加</a>
+                                </li>
+
+                                <li>
+                                        <a href="#14-SetRealTime">设置延时</a>
+                                </li>
+
+                                <li>
+                                        <a href="#15-GetRealTime">查询延时</a>
+                                </li>
+
+                                <li>
+                                        <a href="#16-DownLoadPic">图片抓拍</a>
+                                </li>
+
+                                <li>
+                                        <a href="#17-DirectoryDlg">选择文件夹路径</a>
+                                </li>
+
+                                <li>
+                                        <a href="#18-SetSystemTime">同步PC时间</a>
+                                </li>
+                        </ol>
+                        <OBJECT ID="H264CU1" WIDTH=416 HEIGHT=234 CLASSID="CLSID:0A73F9A4-C4C3-41F6-97C3-760DECCCE3A7">
+                                <PARAM NAME="_Version" VALUE="65536">
+                                <PARAM NAME="_ExtentX" VALUE="2117">
+                                <PARAM NAME="_ExtentY" VALUE="1058">
+                                <PARAM NAME="_StockProps" VALUE="0">
+                        </OBJECT>
+                </div>
+
+                <div class="right">
+                        <a class="title" name="0-welcome">1、OCX控件SDK使用说明</a>
+
+                        <pre>
+                                该控件对视频播放和参数设置等功能进行了封装，易于开发者实现简单的监控工程，可用于VB，js，.Net编程等使用。
+                        </pre>
+
+                        <a class="title" name="1-login">2、登陆设备</a>
+
+                        <pre>
+        方法:    Login
+        函数全称:  Login(LPCTSTR SeverIP, long ServerPort, LPCTSTR LoginName, LPCTSTR LoginPsw)
+        函数成员:    protected 
+        返回值:   short   1 用户名错误  2 密码错误 -1 其他错误  0成功
+        注释: 登录设备，这是最先调用的接口
+        参数: LPCTSTR LoginName  登陆名称
+        参数: LPCTSTR LoginPsw   登陆密码
+        参数: long ServerPort       服务器端口
+        参数: LPCTSTR SeverIP     服务器IP
+                        </pre>
+
+                        <div class="funcStyle">
+                                <b>ServerIP:</b>
+
+                                <input id="Log_serverIP" type="text"></input>
+
+                                <br>
+                                <b>Server port:</b>
+
+                                <input id="Log_ServerPort" type="text"></input>
+
+                                <br>
+                                <b>Login name:</b>
+
+                                <input id="Log_name" type="text"></input>
+
+                                <br>
+                                <b>pass word:</b>
+
+                                <input id="Log_psw" type="text"></input>
+
+                                <br>
+
+                                <button type="button" onclick="login()">Login</button>
+                                <br>
+                                <b>Return Value:</b><div id="Loging_Result"></div>
+                        </div>
+
+                        <a class="title" name="2-logout">3、注销设备</a>
+
+                        <pre>
+        方法:    Logout
+        函数全称:   Logout()
+        函数成员:    protected 
+        返回值:   void
+        注释: 注销登陆
+                        </pre>
+                        <div class="funcStyle">
+                                <b>Logout</b> 
+                                <button type="button" onclick="Func_LoginOut()">LoginOut</button>
+                        </div>
+
+                        <a class="title" name="3-OpenVideo">4、打开视频</a>
+
+                        <pre>
+        方法 ：OpenVideo
+        函数全称:  OpenVideo(short Channel)
+        函数成员:    protected 
+        返回值:   short
+        注释: 先选择对应的窗口，调用该接口可在上面打开视频
+        参数: short  Channel      // 如果是单通道,该参数置1，多通道对应通道号 1-16
+                        </pre>
+                        <div class="funcStyle">
+                                <b>Channel</b> <input id="Open_channelNo"></input>
+                                <br>
+                                <button type="button" onclick="Func_OpenVideo()">OpenVideo</button>
+                                <br>
+                                <b>Return Value:</b><div id="OpenVideo_Result"></div>
+                        </div>
+                        <a class="title" name="4-CloseVideo">5、关闭视频</a>
+
+                        <pre>
+        方法：CloseVideo
+        函数全称:  CloseVideo（short Channel）
+        函数成员:    protected 
+        返回值:   void
+        注释:  关闭对应通道视频
+        参数: short Channel       // 如果是单通道,该参数置1，多通道对应通道号 1-16
+                        </pre>
+                        <div class="funcStyle">
+                                <b>Channel</b> <input id="CloseVideo_channelNo"></input>
+                                <br>
+                                <button type="button" onclick="Func_CloseVideo()">CloseVideo</button>
+                                <br>
+                                <b>Return Value:</b><div id="CloseVideo_Result"></div>
+                        </div>
+
+                        <a class="title" name="5-SetCaptureMass">6、设置图片质量</a>
+
+                        <pre>
+        方法:    SetCaptureMass
+        函数全称:  SetCaptureMass(short channelNo, short iMass)
+        函数成员:    protected
+        返回值:  short
+        注释: 设置设备抓拍图片质量
+        参数: short      channelNo    // 如果是单通道,该参数置1，多通道对应通道号 1-16
+        参数: short      iMass      // 0好 1较好 2一般 3较差 4差
+                        </pre>
+                        <div class="funcStyle">
+                                <b>Channel</b> <input id="SetCaptureMass_ChannelNo">
+                                <br>
+                                <b>iMass</b> <input id="SetCaptureMass_iMass">
+                                <br>
+                                <button type="button" onclick="Func_SetCaptureMass()">SetCaptureMass</button>
+                                <br>
+                                <b>Return Value:</b><div id="SetCaptureMass_Result"></div>
+                        </div>
+                        <a class="title" name="6-GetCaptureMass">7、查询图片质量(不实现)</a>
+
+                        <pre>
+        方法:    GetCaptureMass
+        函数全称:  GetCaptureMass(short channelNo)
+        函数成员:    protected
+        返回值:  short
+        注释: 查询设备抓拍图片的质量
+        参数: short  channelNo    // 如果是单通道,该参数置1，多通道对应通道号 1-16
+                        </pre>
+                        <div class="funcStyle">
+                                        <b>Channel</b> <input id="GetCaptureMass_ChannelNo">
+                                        <br>
+                                        <button type="button" onclick="Func_GetCaptureMass()">GetCaptureMass</button>
+                                        <br>
+                                        <b>Return Value:</b><div id="GetCaptureMass_Result"></div>
+                        </div>
+
+                        <a class="title" name="7-SetOSDTimeInfo">8、设置OSD时间</a>
+
+                        <pre>
+        方法:    SetOSDTimeInfo
+        函数全称:  SetOSDTimeInfo (short channelNo, short timeFlag, short fontType, short fontSize, short timeX, short timeY, LPCTSTR color)
+        函数成员:    protected
+        返回值:  short
+        注释: 设置OSD时间信息
+        参数: short      channelNo    // 如果是单通道,该参数置1，多通道对应通道号 1-16
+        参数: short      timeFlag     //显示使能  1 显示时间；0 不显示
+        参数: short      fontType     //字体  0 宋体；1 黑体
+        参数: short      fontSize      //字号0－2 大、中、小
+        参数: short      timeX       //起始X坐标
+        参数: short      timeY       //起始Y坐标
+        参数: LPCTSTR    color      //颜色，字符串如：255#255#255#100#255#255#255#100//前景色RGB 透明值背景色RGB透明值
+                                        
+                        </pre>
+                        <div class="funcStyle">
+                                        <b>Channel</b> <input id="SetOSDTime_channelNo">
+                                        <br>
+                                        <b>timeFlag</b> <input id="SetOSDTime_timeFlag">
+                                        <br>
+                                        <b>fontType</b> <input id="SetOSDTime_fontType">
+                                        <br>
+                                        <b>fontSize</b> <input id="SetOSDTime_FontSize">
+                                        <br>
+                                        <b>timeX</b> <input id="SetOSDTime_timeX">
+                                        <br>
+                                        <b>timeY</b> <input id="SetOSDTime_timeY">
+                                        <br>
+                                        <b>color</b> <input id="SetOSDTime_color">
+                                        <br>
+                                        <button type="button" onclick="Func_SetOSDTimeInfo()">SetOSDTimeInfo</button>
+                                        <br>
+                                        <b>Return Value:</b><div id="SetOSDTimeInfo_Result"></div>
+                        </div>
+                        <a class="title" name="8-GetOSDTimeInfo">9、查询OSD时间(不实现)</a>
+
+                        <pre>
+        方法:    GetOSDTimeInfo
+        函数全称:  GetOSDTimeInfo (short  channelNo)        
+        函数成员:    protected        
+        返回值:  short
+        注释:  查询OSD时间信息
+        参数: short      channelNo    // 如果是单通道,该参数置1，多通道对应通道号 1-16        
+                                        
+                        </pre>
+                        <div class="funcStyle">
+                                        <b>GetOSDTimeInfo</b><input id="GetOSDTimeInfo_channelNo">
+                                        <br>
+                                        <button type="button" onclick="Func_GetOSDTimeInfo()">GetOSDTimeInfo</button>
+                                        <br>
+                                        <b>Return Value:</b><div id="GetOSDTimeInfo_Result"></div>
+                        </div>
+                        <a class="title" name="9-ColorDlg">10、颜色对话框(不实现)</a>
+
+                        <pre>
+        方法:    ColorDlg
+        函数全称:  ColorDlg(short byRed,  short byGreen,  short byBlue)
+        函数成员:    protected
+        返回值:  BSTR  成功返回三颜色字符串R#G#B(如C0#FF#8A)，失败返回空
+        注释: 设置颜色对话框
+        参数: short      byRed    // 红
+        参数: short      byGreen  // 绿
+        参数: short      byBlue   // 蓝
+                                        
+                        </pre>
+                        <div class="funcStyle">
+                                        <b>byRed</b><input id="ColorDlg_Red">
+                                        <br>
+                                        <b>byGreen</b><input id="ColorDlg_Green">
+                                        <br>
+                                        <b>byBlue</b><input id="ColorDlg_Blue">
+                                        <br>
+                                        <button type="button" onclick="Func_ColorDlg()">ColorDlg</button>
+                                        <br>
+                                        <b>Return Value:</b><div id="ColorDlg_Result"></div>
+                        </div>
+
+                        <a class="title" name="10-SetOSDLogoInfo">11、设置OSD Logo(不实现)</a>
+
+                        <pre>
+        方法:    SetOSDLogoInfo
+        函数全称:  SetOSDLogoInfo(short channelNo, short logoFlag, LPCTSTR logo, short fontType, short fontSize, short logoX, short logoY, LPCTSTR color)
+        函数成员:    protected
+        返回值:  short
+        注释: 设置OSD Logo信息
+        参数: short      channelNo    // 如果是单通道,该参数置1，多通道对应通道号 1-16
+        参数: short      logoFlag      //显示使能  1 显示logo；0 不显示
+        参数: LPCTSTR    logo         // 所要显示的logo字
+        参数: short      fontType     //字体  0 宋体；1 黑体
+        参数: short      fontSize      	//字号0－2 大、中、小
+        参数: short      timeX       //起始X坐标
+        参数: short      timeY       //起始Y坐标
+        参数: LPCTSTR    color      //颜色，字符串如：255#255#255#100#255#255#255#100//前景色RGB 透明值背景色RGB透明值
+                                        
+                        </pre>
+                        <div class="funcStyle">
+                                        <b>channelNo</b><input id="SetOSDLogoInfo_channelNo">
+                                        <br>
+                                        <b>logoFlag</b><input id="SetOSDLogoInfo_logoFlag">
+                                        <br>
+                                        <b>logo</b><input id="SetOSDLogoInfo_logo">
+                                        <br>
+                                        <b>fontType</b><input id="SetOSDLogoInfo_fontType">
+                                        <br>
+                                        <b>fontSize</b><input id="SetOSDLogoInfo_fontSize">
+                                        <br>
+                                        <b>timeX</b><input id="SetOSDLogoInfo_timeX">
+                                        <br>
+                                        <b>timeY</b><input id="SetOSDLogoInfo_timeY">
+                                        <br>
+                                        <b>color</b><input id="SetOSDLogoInfo_color">
+                                        <br>
+                                        <button type="button" onclick="Func_SetOSDLogoInfo()">SetOSDLogoInfo</button>
+                                        <br>
+                                        <b>Return Value:</b><div id="SetOSDLogoInfo_Result"></div>
+                        </div>
+                        <a class="title" name="11-GetOSDLogoInfo">12、查询OSD Logo(不实现)</a>
+
+                        <pre>
+        方法:    GetOSDLogoInfo
+        函数全称:  GetOSDLogoInfo (short  channelNo)
+        函数成员:    protected
+        返回值:  short
+        注释:  查询OSD logo信息
+        参数: short      channelNo    // 如果是单通道,该参数置1，多通道对应通道号 1-16                                        
+                        </pre>
+                        <div class="funcStyle">
+                                        <b>channelNo</b><input id="GetOSDLogoInfo_channelNo">
+                                        <br>
+                                        <button type="button" onclick="Func_GetOSDLogoInfo()">GetOSDLogoInfo</button>
+                                        <br>
+                                        <b>Return Value:</b><div id="GetOSDLogoInfo_Result"></div>
+                        </div>
+
+                        <a class="title" name="12-SetOSDUserDefInfo">13、设置OSD字符叠加</a>
+
+                        <pre>
+        方法:    SetOSDUserDefInfo
+        函数全称:  SetOSDUserDefInfo(short channelNo, short index, short defFlag, LPCTSTR logo, short fontType, short fontSize, short logoX, short logoY, LPCTSTR color)
+        函数成员:    protected
+        返回值:  short
+        注释: 设置OSD时间信息
+        参数: short      channelNo    // 如果是单通道,该参数置1，多通道对应通道号 1-16
+        参数: short      index        //字符叠加区域   如果只需要一块区域，可把此参数置0
+        参数: short      defFlag      //字符显示使能  1 显示字符叠加；0 不显示
+        参数: LPCTSTR    logo         // 所要显示的叠加字符
+        参数: short      fontType     //字体  0 宋体；1 黑体
+        参数: short      fontSize      //字号0－2 大、中、小
+        参数: short      timeX       //起始X坐标
+        参数: short      timeY       //起始Y坐标
+        参数: LPCTSTR    color      //颜色，字符串如：255#255#255#100#255#255#255#100//前景色RGB 透明值背景色RGB透明值
+                                        
+                        </pre>
+                        <div class="funcStyle">
+                                        <b>channelNo</b><input id="SetOSDUserDefInfo_channelNo">
+                                        <br>
+                                        <b>index</b><input id="SetOSDUserDefInfo_index">
+                                        <br>
+                                        <b>defFlag</b><input id="SetOSDUserDefInfo_defFlag">
+                                        <br>
+                                        <b>logo</b><input id="SetOSDUserDefInfo_logo">
+                                        <br>
+                                        <b>fontType</b><input id="SetOSDUserDefInfo_font_type">
+                                        <br>
+                                        <b>fontSize</b><input id="SetOSDUserDefInfo_fontSize">
+                                        <br>
+                                        <b>timeX</b><input id="SetOSDUserDefInfo_timeX">
+                                        <br>
+                                        <b>timeY</b><input id="SetOSDUserDefInfo_timeY">
+                                        <br>
+                                        <b>color</b><input id="SetOSDUserDefInfo_color">
+                                        <br>
+                                        <button type="button" onclick="Func_SetOSDUserDefInfo()">SetOSDUserDefInfo</button>
+                                        <br>
+                                        <b>Return Value:</b><div id="SetOSDUserDefInfo_Result"></div>
+                        </div>
+
+                        <a class="title" name="13-GetOSDUserDefInfo">14、查询OSD字符叠加(不实现)</a>
+
+                        <pre>
+        方法:    GetOSDUserDefInfo
+        函数全称:  GetOSDUserDefInfo (short  channelNo，short index)
+        函数成员:    protected
+        返回值:  short
+        注释:  查询OSD logo信息
+        参数: short      channelNo    // 如果是单通道,该参数置1，多通道对应通道号 1-16
+        参数: short      index        //字符叠加区域   如果只需要一块区域，可把此参数置0                                        
+                        </pre>
+                        <div class="funcStyle">
+                                        <b>channelNo</b><input id="GetOSDUserDefInfo_channelNo">
+                                        <br>
+                                        <b>index</b><input id="GetOSDUserDefInfo_index">
+                                        <br>
+                                        <button type="button" onclick="Func_GetOSDUserDefInfo()">GetOSDUserDefInfo</button>
+                                        <br>
+                                        <b>Return Value:</b><div id="GetOSDUserDefInfo_Result"></div>
+                        </div>
+
+                        <a class="title" name="14-SetRealTime">15、设置延时</a>
+
+                        <pre>
+        方法:    SetRealTime
+        函数全称:  SetRealTime(short iRealTime)
+        函数成员:    protected
+        返回值:  short
+        注释:   设置实时-流畅，
+        参数: short       iRealTime  0:实时性好即延时最小 1:实时性较好2:实时性中 3流畅性较好 4流畅性好
+                                        
+                        </pre>
+                        <div class="funcStyle">
+                                        <b>iRealTime</b><input id="SetRealTime_iRealTime">
+                                        <br>
+                                        <button type="button" onclick="Func_SetRealTime()">SetRealTime</button>
+                                        <br>
+                                        <b>Return Value:</b><div id="SetRealTime_Result"></div>
+                        </div>
+
+                        <a class="title" name="15-GetRealTime">16、查询延时(不实现)</a>
+
+                        <pre>
+        方法:    GetRealTime
+        函数全称:  GetRealTime()
+        函数成员:    protected
+        返回值:  short   0:实时性好 1:实时性较好 2:实时性中 3流畅性较好 4流畅性好
+        注释: 查询当前设备的延时性
+                                        
+                        </pre>
+                        <div class="funcStyle">
+                                        <b>GetRealTime</b>
+                                        <br>
+                                        <button type="button" onclick="Func_GetRealTime()">GetRealTime</button>
+                                        <br>
+                                        <b>Return Value:</b><div id="GetRealTime_Result"></div>
+                        </div>
+
+                        <a class="title" name="16-DownLoadPic">17、图片抓拍</a>
+
+                        <pre>
+        方法:    DownLoadPic
+        函数全称:  DownLoadPic(LPCTSTR  szPath,  short  nWidth,  short  nHeight)
+        函数成员:    protected
+        返回值:  short       0 表示抓拍成功，非0失败
+        注释:   抓拍图片的质量会根据之前设置的图片质量进行保存，如果传入的宽度和高度有一个为0，或都为0，则进行原尺寸抓拍；如果传入正常尺寸比如480*240，则按指定尺寸进行抓拍
+        参数: LPCTSTR  szPath   这里为文件的全路径，包括文件名；
+        参数: short   nWidth   图片的宽度
+        参数: short   nHeight   图片的宽度
+                        </pre>
+                        <div class="funcStyle">
+                                        <b>szPath</b><input id="DownLoadPic_szPath">
+                                        <br>
+                                        <b>nWidth</b><input id="DownLoadPic_width">
+                                        <br>
+                                        <b>nHeight</b><input id="DownLoadPic_height">
+                                        <br>
+                                        <button type="button" onclick="Func_DownLoadPic()">DownLoadPic</button>
+                                        <br>
+                                        <b>Return Value:</b><div id="DownLoadPic_Result"></div>
+                        </div>
+
+                        <a class="title" name="17-DirectoryDlg">18、选择文件夹路径(不实现)</a>
+
+                        <pre>
+        方法：DirectoryDlg
+                                函数全称：DirectoryDlg（）
+        函数成员:    protected
+        返回值:  BSTR  返回选择的文件夹的路径
+        注释: 选择文件夹路径对话框，可用于指定保存图片路径时调用该接口                                        
+                        </pre>
+                        <div class="funcStyle">
+                                        <b>DirectoryDlg</b>
+                                        <br>
+                                        <button type="button" onclick="Func_DirectoryDlge()">DirectoryDlg</button>
+                                        <br>
+                                        <b>Return Value:</b><div id="DirectoryDlg_Result"></div>
+                        </div>
+
+                        <a class="title" name="18-SetSystemTime">19、同步PC时间</a>
+
+                        <pre>
+        方法：SetSystemTime
+                                函数全称：SetSystemTime（int year ,int month, int day, int hour, int minut, int second）
+        函数成员:    protected
+        返回值:  short  0 表示成功，非0失败
+        注释: 用于把设备时间同步为指定时间
+                                        
+                        </pre>
+                        <div class="funcStyle">
+                                        <b>year </b><input id="SetSystemTime_year">
+                                        <br>
+                                        <b>month</b><input id="SetSystemTime_month">
+                                        <br>
+                                        <b>day</b><input id="SetSystemTime_day">
+                                        <br>
+                                        <b>hour</b><input id="SetSystemTime_hour">
+                                        <br>
+                                        <b>minut</b><input id="SetSystemTime_minut">
+                                        <br>
+                                        <b>second</b><input id="SetSystemTime_second">
+                                        <br>
+                                        <button type="button" onclick="Func_SetSystemTime()">SetSystemTime</button>
+                                        <br>
+                                        <b>Return Value:</b><div id="SetSystemTime_Result"></div>
+                        </div>
+                </div>
+        </div>
+</body>
+
+</html>

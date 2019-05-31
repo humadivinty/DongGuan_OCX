@@ -1,0 +1,1 @@
+regsvr32 -u  G:\GitHub\mfc_ocx_demo\Debug\H264CU.ocx

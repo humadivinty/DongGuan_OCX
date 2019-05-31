@@ -1,0 +1,12 @@
+版本-1.0.0.2-2018112101
+修改内容
+1、修改默认叠加字符大小为72
+
+2、字符叠加大小可配置，配置文件为 H264CU_xlw.ini， 该配置文件需放置在程序所在目录才会生效。
+其中的BigSize、MiddleSize、SmallSize 分别对应fontSize的0、1、2号字体大小。
+
+[Font]
+BigSize=64
+MiddleSize=32
+SmallSize=16
+

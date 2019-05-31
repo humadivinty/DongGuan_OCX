@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="CameraModule">
+      <UniqueIdentifier>{ed9f20c8-5a8f-4fe2-bb9c-d58397dea040}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="coredump">
+      <UniqueIdentifier>{56cae69c-fac5-4867-84ba-d5f3b9edcec9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libHvDevice">
+      <UniqueIdentifier>{f057b975-f747-4115-b14f-ae21907040bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tinyxml">
+      <UniqueIdentifier>{7cd355b6-17e0-4658-83b5-4998283f2b7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utilityTool">
+      <UniqueIdentifier>{41fec123-aa87-4167-8c57-895c7c74228c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="H264CU.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="H264CUCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="H264CUPropPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraModule\BaseCamera.cpp">
+      <Filter>CameraModule</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraModule\Camera6467_plate.cpp">
+      <Filter>CameraModule</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraModule\CameraResult.cpp">
+      <Filter>CameraModule</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraModule\ResultListManager.cpp">
+      <Filter>CameraModule</Filter>
+    </ClCompile>
+    <ClCompile Include="coredump\MiniDumper.cpp">
+      <Filter>coredump</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml\tinystr.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml\tinyxml.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml\tinyxmlerror.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml\tinyxmlparser.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="utilityTool\log4z.cpp">
+      <Filter>utilityTool</Filter>
+    </ClCompile>
+    <ClCompile Include="utilityTool\ToolFunction.cpp">
+      <Filter>utilityTool</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="H264CU.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="H264CUCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="H264CUPropPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraModule\BaseCamera.h">
+      <Filter>CameraModule</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraModule\Camera6467_plate.h">
+      <Filter>CameraModule</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraModule\CameraResult.h">
+      <Filter>CameraModule</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraModule\ResultListManager.h">
+      <Filter>CameraModule</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraModule\ThreadSafeList.h">
+      <Filter>CameraModule</Filter>
+    </ClInclude>
+    <ClInclude Include="coredump\MiniDumper.h">
+      <Filter>coredump</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml\tinystr.h">
+      <Filter>tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml\tinyxml.h">
+      <Filter>tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="utilityTool\log4z.h">
+      <Filter>utilityTool</Filter>
+    </ClInclude>
+    <ClInclude Include="utilityTool\ToolFunction.h">
+      <Filter>utilityTool</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="H264CU.def">
+      <Filter>源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="H264CU.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="H264CU.idl">
+      <Filter>源文件</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="H264CU.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="H264CUCtrl.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

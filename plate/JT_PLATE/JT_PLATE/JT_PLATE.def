@@ -1,0 +1,10 @@
+;LIBRARY 
+EXPORTS
+
+Plate_InitDevice
+Plate_CloseDevice
+Plate_Getinfo
+Plate_GetState
+Plate_GetImage
+Plate_Capture
+Plate_TakePhoto

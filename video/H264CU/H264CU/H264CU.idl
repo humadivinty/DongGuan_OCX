@@ -1,0 +1,73 @@
+// H264CU.idl : ActiveX 控件项目的类型库源。
+
+// 此文件将由 MIDL 编译器工具处理以
+// 产生类型库(H264CU.tlb)，该类型库将成为
+// H264CU.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(984B8CA7-C64A-4163-BB32-044B7B20C1FA), version(1.0),
+  control ]
+library H264CULib
+{
+	importlib(STDOLE_TLB);
+
+	//  CH264CUCtrl 的主调度接口
+	[ 
+		uuid(47E7AE4C-F5F0-448B-9080-052A28F58D8F)	
+	]
+	dispinterface _DH264CU
+	{
+		properties:
+		methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+            [id(1)] SHORT Login(BSTR SeverIP, LONG ServerPort, BSTR LoginName, BSTR LoginPsw);
+            [id(2)] void Logout();
+            [id(3)] SHORT OpenVideo(SHORT Channel);
+            [id(4)] void CloseVideo(SHORT Channel);
+            [id(5)] SHORT SetCaptureMass(SHORT channelNo, SHORT iMass);
+            [id(6)] SHORT GetCaptureMass(SHORT channelNo);
+            [id(7)] SHORT SetOSDTimeInfo(SHORT channelNo, SHORT timeFlag, SHORT fontType, SHORT fontSize, SHORT timeX, SHORT timeY, BSTR color);
+            [id(8)] SHORT GetOSDTimeInfo(SHORT channelNo);
+            [id(9)] BSTR ColorDlg(SHORT byRed, SHORT byGreen, SHORT byBlue);
+            [id(10)] SHORT SetOSDLogoInfo(SHORT channelNo, SHORT logoFlag, SHORT logo, SHORT fontType, SHORT fontSize, SHORT logoX, SHORT logoY, BSTR color);
+            [id(11)] SHORT GetOSDLogoInfo(SHORT channelNo);
+            [id(12)] SHORT SetOSDUserDefInfo(SHORT channelNo, SHORT index, SHORT defFlag, BSTR logo, SHORT fontType, SHORT fontSize, SHORT logoX, SHORT logoY, BSTR color);
+            [id(13)] SHORT GetOSDUserDefInfo(SHORT channelNo, SHORT index);
+            [id(14)] SHORT SetRealTime(SHORT iRealTime);
+            [id(15)] SHORT GetRealTime();
+            [id(16)] SHORT DownLoadPic(BSTR szPath, SHORT nWidth, SHORT nHeight);
+            [id(17)] BSTR DirectoryDlg();
+            [id(18)] SHORT SetSystemTime(LONG year, LONG month, LONG day, LONG hour, LONG minut, LONG second);
+    };
+
+	//  CH264CUCtrl 的事件调度接口
+
+	[ 
+		uuid(CDF74B1B-45E8-42C8-8C79-A8AABAD8D397)	
+	]
+	dispinterface _DH264CUEvents
+	{
+		properties:
+			//  事件接口没有任何属性
+
+		methods:
+            [id(1)] void FireCaptureMass(SHORT iMass);
+            [id(2)] void OSDTimeInfo(LONG timeFlag, LONG fontType, LONG timeX, LONG timeY, LONG timeFColorR, LONG timeFColorG, LONG timeFColorB, LONG FColorValue, LONG timeBColorR, LONG timeBColorG, LONG timeBColorB, LONG BColorValue);
+            [id(3)] void OSDLogoInfo(LONG logoFlag, BSTR logo, LONG fontType, LONG fontSize, LONG timeX, LONG timeY, LONG timeFColorR, LONG timeFColorG, LONG timeFColorB, LONG FColorValue, LONG timeBColorR, LONG timeBColorG, LONG timeBColorB, LONG BColorValue);
+            [id(4)] void OSDUserDefInfo(LONG logoFlag, BSTR logo, LONG fontType, LONG fontSize, LONG timeX, LONG timeY, LONG timeFColorR, LONG timeFColorG, LONG timeFColorB, LONG FColorValue, LONG timeBColorR, LONG timeBColorG, LONG timeBColorB, LONG BColorValue);
+    };
+
+	//  CH264CUCtrl 的类信息
+	[
+		uuid(0A73F9A4-C4C3-41F6-97C3-760DECCCE3A7)
+	]
+	coclass H264CU
+	{
+		[default] dispinterface _DH264CU;
+		[default, source] dispinterface _DH264CUEvents;
+	};
+
+};
